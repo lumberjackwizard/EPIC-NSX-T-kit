@@ -1,0 +1,1900 @@
+{
+  "resource_type": "Infra",
+  "children": [
+    {
+      "resource_type": "ChildDomain",
+      "Domain": {
+        "resource_type": "Domain",
+        "id": "default",
+        "children": [
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "INFRA_SECPOL_-_INFRASERVICES",
+              "category": "Infrastructure",
+              "sequence_number": 900000,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_to_DomainServices",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_DomainServices"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/ICMP_Echo_Reply",
+                    "/infra/services/ICMP_Echo_Request",
+                    "/infra/services/SVG_Epic_Active_Directory"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM",
+                    "/infra/domains/default/groups/SG_INFRA_DomainServices"
+                  ]
+                },
+                {
+                  "display_name": "Allow_Access_From_Domain_Services",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_DomainServices"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/NetBios_Name_Service_(TCP)",
+                    "/infra/services/SMB"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM",
+                    "/infra/domains/default/groups/SG_INFRA_DomainServices"
+                  ]
+                },
+                {
+                  "display_name": "Allow_Access_to_SMTP",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_INTERNAL_SMTP",
+                    "/infra/domains/default/groups/SG_INFRA_EXTERNAL_SMTP"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SMTP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM",
+                    "/infra/domains/default/groups/SG_INFRA_INTERNAL_SMTP",
+                    "/infra/domains/default/groups/SG_INFRA_EXTERNAL_SMTP"
+                  ]
+                },
+                {
+                  "display_name": "Allow_Access_to_WSUS",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_WSUS"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM",
+                    "/infra/domains/default/groups/SG_INFRA_WSUS"
+                  ]
+                },
+                {
+                  "display_name": "Allow_access_to_Antivirus",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_AntiVirus"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM",
+                    "/infra/domains/default/groups/SG_INFRA_AntiVirus"
+                  ]
+                },
+                {
+                  "display_name": "Allow_Access_from_JumpServer",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_JumpServers"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM",
+                    "/infra/domains/default/groups/SG_INFRA_JumpServers"
+                  ]
+                },
+                {
+                  "display_name": "Allow_Access_To_JumpServers",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_JumpServers"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SMB"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM",
+                    "/infra/domains/default/groups/SG_INFRA_JumpServers"
+                  ]
+                },
+                {
+                  "display_name": "Allow_Access_From_PAM",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_PAM"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM",
+                    "/infra/domains/default/groups/SG_INFRA_PAM"
+                  ]
+                },
+                {
+                  "display_name": "Allow_ICMP_Inbound",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "ANY"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/ICMP_Echo_Reply",
+                    "/infra/services/ICMP_Echo_Request"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                },
+                {
+                  "display_name": "Allow_ICMP_Outbound",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM"
+                  ],
+                  "destination_groups": [
+                    "ANY"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/ICMP_Echo_Reply",
+                    "/infra/services/ICMP_Echo_Request"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                },
+                {
+                  "display_name": "Allow_Admin_(ssh_and_RDP)_Temp",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "ANY"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/Terminal_Services_(UDP)",
+                    "/infra/services/SSH",
+                    "/infra/services/MS_RPC_TCP",
+                    "/infra/services/RDP"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                },
+                {
+                  "display_name": "Allow_Internet_Access",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_RFC1918"
+                  ],
+                  "destinations_excluded": "true",
+                  "services": [
+                    "/infra/services/HTTPS",
+                    "/infra/services/HTTP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_INFRA_AllVM"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "INFRA_SECPOL_-_Allow_Web_Access_to_vCenter",
+              "category": "Infrastructure",
+              "sequence_number": 900100,
+              "rules": [
+                {
+                  "display_name": "ALLOW_WEB_ACCESS_TO_VCENTER",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_ALL_LINUX"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_INFRA_VCENTER"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/HTTPS"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_INFRA_ALL_LINUX",
+                    "/infra/domains/default/groups/SG_INFRA_VCENTER"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "EPIC_SECPOL_-_Allow_EPIC_Support_Access_to_All_EPIC",
+              "category": "Application",
+              "sequence_number": 900200,
+              "rules": [
+                {
+                  "display_name": "Allow_EPIC_Support_Access_to_EPIC",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_EpicVPN"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_REPORTINGTIER",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_CLIENTTIER",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_DATABASETIER",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CLIENTTIER",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_REPORTINGTIER",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_PRESENTATIONTIER",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_DATABASETIER",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_PRESENTATIONTIER"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_REPORTINGTIER",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_CLIENTTIER",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_DATABASETIER",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CLIENTTIER",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_REPORTINGTIER",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_PRESENTATIONTIER",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_DATABASETIER",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_PRESENTATIONTIER",
+                    "/infra/domains/default/groups/SG_EpicVPN"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "PRD_EPIC_SECPOL_-_Allow_Access_to_DR_Database_Backup",
+              "category": "Application",
+              "sequence_number": 900300,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_to_DR_Database_Backup",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cache"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_DBBKP"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/HTTP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cache",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_DBBKP"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "PRD_EPIC_SECPOL_-_Allow_SQL_Access_to_Clarity_RDBMS",
+              "category": "Application",
+              "sequence_number": 900400,
+              "rules": [
+                {
+                  "display_name": "Allow_SQL_Access_to_Clarity_RDBMS",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_ClarityConsole"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_ClarityRDBMS"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/MS-SQL-S"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_ClarityConsole",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_ClarityRDBMS"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "PRD_EPIC_SECPOL_-_Allow_Access_to_SUPDB",
+              "category": "Application",
+              "sequence_number": 900500,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_to_SUPDB",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MyChart"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SupDB"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SVC_Epic_SUPDB_TCP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MyChart",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SupDB"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "PRD_EPIC_SECPOL_-_Allow_Access_to_Clarity_Console",
+              "category": "Application",
+              "sequence_number": 900600,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_to_Clarity_Console",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_WebBLOB"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_ClarityConsole"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SMB"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_WebBLOB",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_ClarityConsole"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "PRD_EPIC_SECPOL_-_Allow_Access_to_PRD_CACHE_Servers",
+              "category": "Application",
+              "sequence_number": 900700,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_to_PRD_CACHE_Servers",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_WebBLOB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_DATABASETIER"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SVC_Epic_CACHE_TCP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_WebBLOB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_DATABASETIER"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "PRD_EPIC_SECPOL_-_Allow_CrossDatabase_Access",
+              "category": "Application",
+              "sequence_number": 900800,
+              "rules": [
+                {
+                  "display_name": "ALLOW_CROSS_DATABASE_ACCESS",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_DATABASETIER",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_DATABASETIER"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_DATABASETIER",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_DATABASETIER"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SVC_Epic_CACHE_TCP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_DATABASETIER",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_DATABASETIER",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_DATABASETIER",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_DATABASETIER"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "PRD_EPIC_SECPOL_-_Allow_Web_Access_to_System_Pulse",
+              "category": "Application",
+              "sequence_number": 900900,
+              "rules": [
+                {
+                  "display_name": "Allow_Web_Access_to_SystemPulse",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_ALLEPICVM"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SystemPulse"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/HTTPS",
+                    "/infra/services/HTTP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_ALLEPICVM",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SystemPulse"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Web_Access_to_SlicerDicer",
+              "category": "Application",
+              "sequence_number": 901000,
+              "rules": [
+                {
+                  "display_name": "Allow_WebAccess_to_SlicerDicer",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_SlicerDicer"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/HTTPS",
+                    "/infra/services/HTTP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_SlicerDicer"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Access_to_Caboodle",
+              "category": "Application",
+              "sequence_number": 901100,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_to_Caboodle",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_SlicerDicer",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Caboodle"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Caboodle"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SMB",
+                    "/infra/services/MS-SQL-S"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_SlicerDicer",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Caboodle",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Caboodle"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Access_to_EpicPrintFormat_Server",
+              "category": "Application",
+              "sequence_number": 901200,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_To_EpicPrintFormat_Server",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SystemPulse",
+                    "/infra/domains/default/groups/SG_InternalNetworks"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SystemPulse",
+                    "/infra/domains/default/groups/SG_InternalNetworks",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer"
+                  ]
+                },
+                {
+                  "display_name": "Allow_Network_Printer_Access_to_EPS",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SystemPulse",
+                    "/infra/domains/default/groups/SG_InternalNetworks"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SystemPulse",
+                    "/infra/domains/default/groups/SG_InternalNetworks",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Access_From_Kuiper",
+              "category": "Application",
+              "sequence_number": 901300,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_from_Kuiper",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Kuiper"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_WebBLOB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicCareLink",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BCAWeb",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_EpicCareLink",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_ClarityConsole",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_HyperspaceWeb",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_MyChart",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Interconnect",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MyChart",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_BCAPC",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_ClarityConsole",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_EpicPrintFormatServer",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_WebBLOB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SVC_Epic_Kuiper_TCP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_WebBLOB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicCareLink",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BCAWeb",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_EpicCareLink",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_ClarityConsole",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_HyperspaceWeb",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_MyChart",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Interconnect",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MyChart",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_BCAPC",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_ClarityConsole",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_EpicPrintFormatServer",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_WebBLOB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Kuiper"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Access_to_Cache",
+              "category": "Application",
+              "sequence_number": 901400,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_to_Cache",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicCareLink",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_ClarityConsole",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BusinessObjects",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BCAServer",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_SlicerDicer",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Kuiper",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Cache",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SupDB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_FULLCLIENT",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MyChart",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cache",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_WebBLOB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_TrainingDB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cache"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicCareLink",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_ClarityConsole",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BusinessObjects",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BCAServer",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_SlicerDicer",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Kuiper",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Cache",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SupDB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_FULLCLIENT",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MyChart",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cache",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_WebBLOB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_TrainingDB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cache"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Access_to_TrainingDB",
+              "category": "Application",
+              "sequence_number": 901500,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_to_TrainingDB",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Kuiper",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cache",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_WebBLOB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_TrainingDB"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SVC_Epic_TrainDB_TCP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Kuiper",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cache",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_WebBLOB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_TrainingDB"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Intra_DB_Tier_Communication",
+              "category": "Application",
+              "sequence_number": 901600,
+              "rules": [
+                {
+                  "display_name": "Allow_Intra-DB_Communication",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "ANY"
+                  ],
+                  "destination_groups": [
+                    "ANY"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_File_Share_Access_to_File_Server",
+              "category": "Application",
+              "sequence_number": 901700,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_to_File_Server_",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Caboodle",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BCAServer",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Kuiper",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_HyperspaceWeb",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SupDB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cache",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_WebBLOB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_TrainingDB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb",
+                    "/infra/domains/default/groups/SG_InternalNetworks"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_FileServer"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SMB"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Caboodle",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BCAServer",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Kuiper",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_HyperspaceWeb",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SupDB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cache",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_WebBLOB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_TrainingDB",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb",
+                    "/infra/domains/default/groups/SG_InternalNetworks",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_FileServer"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_FTP_Access_to_EPS",
+              "category": "Application",
+              "sequence_number": 901800,
+              "rules": [
+                {
+                  "display_name": "Allow_FTP_Access_EPS",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cache"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/FTP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cache",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Access_to_Networked_Printers_Fax",
+              "category": "Application",
+              "sequence_number": 901900,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_to_Network_Printers",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_InternalNetworks",
+                    "/infra/domains/default/groups/SG_INFRA_FaxServers"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SVG_Epic_WinPrint"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer",
+                    "/infra/domains/default/groups/SG_InternalNetworks",
+                    "/infra/domains/default/groups/SG_INFRA_FaxServers"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Web_Access_to_Web_Blob",
+              "category": "Application",
+              "sequence_number": 902000,
+              "rules": [
+                {
+                  "display_name": "Allow_HTTP_S_Access_to_WebBlob",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicCareLink",
+                    "/infra/domains/default/groups/SG_INFRA_INTERNAL_SMTP",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MyChart",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_WebBLOB"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/HTTPS",
+                    "/infra/services/HTTP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicCareLink",
+                    "/infra/domains/default/groups/SG_INFRA_INTERNAL_SMTP",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MyChart",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_WebBLOB"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Web_Access_to_Interconnect",
+              "category": "Application",
+              "sequence_number": 902100,
+              "rules": [
+                {
+                  "display_name": "Allow_Web_Access_to_Interconnect",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicCareLink",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MyChart",
+                    "/infra/domains/default/groups/SG_InternalNetworks"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/HTTPS",
+                    "/infra/services/HTTP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicCareLink",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MyChart",
+                    "/infra/domains/default/groups/SG_InternalNetworks",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Access_to_Cube",
+              "category": "Application",
+              "sequence_number": 902200,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_to_Cube",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Cube"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cube"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SMB"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Cube",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cube"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_SQL_Access_to_MP_SQL",
+              "category": "Application",
+              "sequence_number": 902300,
+              "rules": [
+                {
+                  "display_name": "Allow_SQL_Access_to_MP_SQL",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BusinessObjects",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SystemPulse",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MPSQLServer"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/MS-SQL-S"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BusinessObjects",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SystemPulse",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicPrintFormatServer",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MPSQLServer"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_FileServer_Access_to_MP_SQL",
+              "category": "Application",
+              "sequence_number": 902400,
+              "rules": [
+                {
+                  "display_name": "Allow_FileServer_Access_to_MP_SQL",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BusinessObjects",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Cube"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MPSQLServer"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SMB",
+                    "/infra/services/SMB_Server_UDP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BusinessObjects",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_Cube",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MPSQLServer"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Access_to_Business_Objects",
+              "category": "Application",
+              "sequence_number": 902500,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_to_Business_Objects",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_ClarityConsole",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BusinessObjects",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BusinessObjects"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SVG_Epic_BusinessObjects"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_ClarityConsole",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BusinessObjects",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BusinessObjects"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_SQL_Access_to_Clarity_RDBMS",
+              "category": "Application",
+              "sequence_number": 902600,
+              "rules": [
+                {
+                  "display_name": "Allow_SQL_Access_to_Clarity_RDBMS",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cube",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Caboodle",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_ClarityConsole",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BusinessObjects",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_SlicerDicer",
+                    "/infra/domains/default/groups/SG_InternalNetworks"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_ClarityRDBMS"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/MS-SQL-S"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cube",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Caboodle",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_ClarityConsole",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BusinessObjects",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_SlicerDicer",
+                    "/infra/domains/default/groups/SG_InternalNetworks",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_ClarityRDBMS"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Access_to_Clarity_Console",
+              "category": "Application",
+              "sequence_number": 902700,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_to_Clarity_Console",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BusinessObjects",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cache",
+                    "/infra/domains/default/groups/SG_InternalNetworks"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_ClarityConsole"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SVC_Epic_ClarityConsole_TCP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_BusinessObjects",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Cache",
+                    "/infra/domains/default/groups/SG_InternalNetworks",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_ClarityConsole"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Web_Access_to_Hyperspace_Web",
+              "category": "Application",
+              "sequence_number": 902800,
+              "rules": [
+                {
+                  "display_name": "Allow_Web_Access_to_Hyperspace_Web",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_SlicerDicer",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SystemPulse",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/HTTPS",
+                    "/infra/services/HTTP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_SlicerDicer",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SystemPulse",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CitrixXenapp",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Web_Access_to_MyChart",
+              "category": "Application",
+              "sequence_number": 902900,
+              "rules": [
+                {
+                  "display_name": "Allow_Web_Access_to_My_Chart",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb",
+                    "/infra/domains/default/groups/SG_InternalNetworks"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MyChart"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/HTTPS",
+                    "/infra/services/HTTP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_HyperspaceWeb",
+                    "/infra/domains/default/groups/SG_InternalNetworks",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_MyChart"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Web_Access_to_EpicCare_Link",
+              "category": "Application",
+              "sequence_number": 903000,
+              "rules": [
+                {
+                  "display_name": "Allow_Web_Access_to_EpicCare_Link",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect",
+                    "/infra/domains/default/groups/SG_InternalNetworks"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicCareLink"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/HTTPS",
+                    "/infra/services/HTTP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect",
+                    "/infra/domains/default/groups/SG_InternalNetworks",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_EpicCareLink"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Web_Access_to_Haiku_Canto",
+              "category": "Application",
+              "sequence_number": 903100,
+              "rules": [
+                {
+                  "display_name": "Allow_Web_Access_to_Haiku_Canto",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_HaikuCanto"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/HTTPS",
+                    "/infra/services/HTTP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_Interconnect",
+                    "/infra/domains/default/groups/SG_PRD_EPIC_HaikuCanto"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_Intra_Client_Tier_Access",
+              "category": "Application",
+              "sequence_number": 903200,
+              "rules": [
+                {
+                  "display_name": "Allow_IntraClienttier_Access_",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CLIENTTIER"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CLIENTTIER"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CLIENTTIER",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CLIENTTIER"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_Allow_System_Pulse_Access_to_All_Windows_Tiers",
+              "category": "Application",
+              "sequence_number": 903300,
+              "rules": [
+                {
+                  "display_name": "Allow_Access_to_Windows_Tier",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SystemPulse"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_REPORTINGTIER",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CLIENTTIER",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_PRESENTATIONTIER"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "/infra/services/SVC_Epic_SystemPulse_TCP"
+                  ],
+                  "scope": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_SystemPulse",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_REPORTINGTIER",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CLIENTTIER",
+                    "/infra/domains/default/groups/SG_NPD_EPIC_PRESENTATIONTIER"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_CLIENT_TIER_ASSURANCE",
+              "category": "Application",
+              "sequence_number": 903400,
+              "rules": [
+                {
+                  "display_name": "Allow_any_to_NPD_Client_Tier",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "ANY"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CLIENTTIER"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                },
+                {
+                  "display_name": "Allow_NPD_Client_Tier_to_Any",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_CLIENTTIER"
+                  ],
+                  "destination_groups": [
+                    "ANY"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_REPORTING_TIER_ASSURANCE",
+              "category": "Application",
+              "sequence_number": 903500,
+              "rules": [
+                {
+                  "display_name": "Allow_Any_to_NPD_Reporting_Tier",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "ANY"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_REPORTINGTIER"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                },
+                {
+                  "display_name": "Allow_NPDReporting_Tier_to_Any",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_REPORTINGTIER"
+                  ],
+                  "destination_groups": [
+                    "ANY"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_PRESENTATION_TIER_ASSURANCE",
+              "category": "Application",
+              "sequence_number": 903600,
+              "rules": [
+                {
+                  "display_name": "Allow_Any_to_NPD_PresentationTier",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "ANY"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_PRESENTATIONTIER"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                },
+                {
+                  "display_name": "Allow_NPD_Presentation_Tier_to_Any",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_PRESENTATIONTIER"
+                  ],
+                  "destination_groups": [
+                    "ANY"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "NPD_EPIC_SECPOL_-_DATABASE_TIER_ASSURANCE",
+              "category": "Application",
+              "sequence_number": 903700,
+              "rules": [
+                {
+                  "display_name": "Allow_Any_to_NPD_DatabaseTier",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "ANY"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_DATABASETIER"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                },
+                {
+                  "display_name": "Allow_NPD_DatabaseTier_to_Any",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_NPD_EPIC_DATABASETIER"
+                  ],
+                  "destination_groups": [
+                    "ANY"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "PRD_EPIC_SECPOL_-_DATABASE_TIER_ASSURANCE",
+              "category": "Application",
+              "sequence_number": 903800,
+              "rules": [
+                {
+                  "display_name": "Allow_Any_to_PRD_Database_Tier",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "ANY"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_DATABASETIER"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                },
+                {
+                  "display_name": "Allow_PRD_Database_Tier_to_Any",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_DATABASETIER"
+                  ],
+                  "destination_groups": [
+                    "ANY"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "PRD_EPIC_SECPOL_-_PRESENTATION_TIER_ASSURANCE",
+              "category": "Application",
+              "sequence_number": 903900,
+              "rules": [
+                {
+                  "display_name": "Allow_Any_to_PRD_Presentation_Tier",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "ANY"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_PRESENTATIONTIER"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                },
+                {
+                  "display_name": "Allow_PRD_Presentation_Tier_to_Any",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_PRESENTATIONTIER"
+                  ],
+                  "destination_groups": [
+                    "ANY"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "PRD_EPIC_SECPOL_-_REPORTING_TIER_ASSURANCE",
+              "category": "Application",
+              "sequence_number": 904000,
+              "rules": [
+                {
+                  "display_name": "Allow_Any_to_PRD_Reporting_Tier",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "ANY"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_REPORTINGTIER"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                },
+                {
+                  "display_name": "Allow_PRD_Reporting_Tier_to_Any",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_REPORTINGTIER"
+                  ],
+                  "destination_groups": [
+                    "ANY"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource_type": "ChildSecurityPolicy",
+            "SecurityPolicy": {
+              "resource_type": "SecurityPolicy",
+              "id": "PRD_EPIC_SECPOL_-_CLIENT_TIER_ASSURANCE",
+              "category": "Application",
+              "sequence_number": 904100,
+              "rules": [
+                {
+                  "display_name": "Allow_Any_to_PRD_Client_Tier",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "ANY"
+                  ],
+                  "destination_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_CLIENTTIER"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                },
+                {
+                  "display_name": "Allow_PRD_Client_Tier_to_Any",
+                  "action": "ALLOW",
+                  "logged": "true",
+                  "ip_protocol": "IPV4",
+                  "source_groups": [
+                    "/infra/domains/default/groups/SG_PRD_EPIC_CLIENTTIER"
+                  ],
+                  "destination_groups": [
+                    "ANY"
+                  ],
+                  "destinations_excluded": "False",
+                  "services": [
+                    "ANY"
+                  ],
+                  "scope": [
+                    "ANY"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

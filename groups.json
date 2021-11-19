@@ -1,0 +1,1214 @@
+{
+  "resource_type": "Infra",
+  "children": [
+    {
+      "resource_type": "ChildDomain",
+      "Domain": {
+          "id": "default",
+          "resource_type": "Domain",
+          "children": [
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_WebBLOB",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_WebBLOB"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_EpicCareLink",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_EpicCareLink"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_INFRA_AllVM",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_INFRA_AllVM"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_BCAWeb",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_BCAWeb"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_EpicCareLink",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_EpicCareLink"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_INFRA_PAM",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_INFRA_PAM"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_FileServer",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_FileServer"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_REPORTINGTIER",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_REPORTINGTIER"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_Kuiper",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_Kuiper"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_HyperspaceWeb",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_HyperspaceWeb"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_MPSQLServer",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_MPSQLServer"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_INFRA_AntiVirus",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_INFRA_AntiVirus"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_Cache",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_Cache"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_CLIENTTIER",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_CLIENTTIER"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_ClarityRDBMS",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_ClarityRDBMS"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_SystemPulse",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_SystemPulse"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_DATABASETIER",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_DATABASETIER"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_CitrixStoreFront",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_CitrixStoreFront"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_Interconnect",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_Interconnect"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_INFRA_INTERNAL_SMTP",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_INFRA_INTERNAL_SMTP"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_Interconnect",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_Interconnect"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_CLIENTTIER",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_CLIENTTIER"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_FULLCLIENT",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_FULLCLIENT"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_REPORTINGTIER",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_REPORTINGTIER"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_CitrixPVS",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_CitrixPVS"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_Cache",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_Cache"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_INFRA_WSUS",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_INFRA_WSUS"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_NetworkPrinter",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_NetworkPrinter"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_BusinessObjects",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_BusinessObjects"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_Caboodle",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_Caboodle"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_BCAServer",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_BCAServer"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_FileServer",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_FileServer"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_Cube",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_Cube"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_Cube",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_Cube"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_WarpDrive",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_WarpDrive"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_EpicPrintFormatServer",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_EpicPrintFormatServer"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_SupDB",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_SupDB"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_WebBLOB",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_WebBLOB"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_ClarityConsole",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_ClarityConsole"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_CitrixXenapp",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_CitrixXenapp"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_INFRA_VCENTER",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_INFRA_VCENTER"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_CitrixXenapp",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_CitrixXenapp"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_CitrixPVS",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_CitrixPVS"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_DBBKP",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_DBBKP"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_PRESENTATIONTIER",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_PRESENTATIONTIER"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_EpicPrintFormatServer",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_EpicPrintFormatServer"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_TrainingDB",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_TrainingDB"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_MPSQLServer",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_MPSQLServer"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_InternalNetworks",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_InternalNetworks"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_MyChart",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_MyChart"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_INFRA_JumpServers",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_INFRA_JumpServers"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_INFRA_RFC1918",
+                "expression": [
+                  {
+                    "resource_type": "IPAddressExpression",
+                    "id": "RFC_1918_IP_Ranges",
+                    "ip_addresses":  ["10.0.0.0/8","172.16.0.0/12","192.168.0.0/16"]
+                  }
+               
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_INFRA_ALL_LINUX",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_INFRA_ALL_LINUX"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_SlicerDicer",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_SlicerDicer"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_BCAPC",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_BCAPC"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_DATABASETIER",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_DATABASETIER"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_SlicerDicer",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_SlicerDicer"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_ClarityRDBMS",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_ClarityRDBMS"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_PRESENTATIONTIER",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_PRESENTATIONTIER"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_ALLEPICVM",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_ALLEPICVM"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_HyperspaceWeb",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_HyperspaceWeb"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_EpicVPN",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_EpicVPN"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_INFRA_DomainServices",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_INFRA_DomainServices"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_MyChart",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_MyChart"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_Caboodle",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_Caboodle"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_RPTShadow",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_RPTShadow"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_FullClient",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_FullClient"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_HaikuCanto",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_HaikuCanto"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_ClarityConsole",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_ClarityConsole"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_BusinessObjects",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_BusinessObjects"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_CitrixStoreFront",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_CitrixStoreFront"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_INFRA_FaxServers",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_INFRA_FaxServers"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_INFRA_EXTERNAL_SMTP",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_INFRA_EXTERNAL_SMTP"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_NPD_EPIC_BCAServer",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_NPD_EPIC_BCAServer"
+                  }
+                ]
+              }
+            },
+            {
+              "resource_type": "ChildGroup",
+              "Group": {
+                "resource_type": "Group",
+                "id": "SG_PRD_EPIC_Rover",
+                "expression": [
+                  {
+                    "resource_type": "Condition",
+                    "member_type": "VirtualMachine",
+                    "operator": "EQUALS",
+                    "key": "Tag",
+                    "value": "SG_PRD_EPIC_Rover"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      
+    }
+  ]
+}

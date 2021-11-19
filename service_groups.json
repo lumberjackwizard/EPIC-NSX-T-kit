@@ -1,0 +1,344 @@
+{
+  "resource_type": "Infra",
+  "children": [
+    {
+      "resource_type": "ChildService",
+      "Service": {
+        "resource_type": "Service",
+        "id": "SVG_Epic_WinPrint",
+        "service_entries": [
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SVC_Epic_WinPrint_TCP",
+            "nested_service_path": "/infra/services/SVC_Epic_WinPrint_TCP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SVC_Epic_WinPrint_UDP",
+            "nested_service_path": "/infra/services/SVC_Epic_WinPrint_UDP"
+          }
+        ]
+      }
+    },
+    {
+      "resource_type": "ChildService",
+      "Service": {
+        "resource_type": "Service",
+        "id": "SVG_Epic_HyperspaceWeb",
+        "service_entries": [
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SVC_Epic_HyperspaceWeb_TCP",
+            "nested_service_path": "/infra/services/SVC_Epic_HyperspaceWeb_TCP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SVC_Epic_HyperspaceWeb_UDP",
+            "nested_service_path": "/infra/services/SVC_Epic_HyperspaceWeb_UDP"
+          }
+        ]
+      }
+    },
+    {
+      "resource_type": "ChildService",
+      "Service": {
+        "resource_type": "Service",
+        "id": "SVG_Epic_MPSQL",
+        "service_entries": [
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SVC_Epic_MPSQL_TCP",
+            "nested_service_path": "/infra/services/SVC_Epic_MPSQL_TCP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SVC_Epic_MPSQL_UDP",
+            "nested_service_path": "/infra/services/SVC_Epic_MPSQL_UDP"
+          }
+        ]
+      }
+    },
+    {
+      "resource_type": "ChildService",
+      "Service": {
+        "resource_type": "Service",
+        "id": "SVG_Epic_BusinessObjects",
+        "service_entries": [
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SVC_Epic_BusinessObjects_TCP",
+            "nested_service_path": "/infra/services/SVC_Epic_BusinessObjects_TCP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SVC_Epic_BusinessObjects_UDP",
+            "nested_service_path": "/infra/services/SVC_Epic_BusinessObjects_UDP"
+          }
+        ]
+      }
+    },
+    {
+      "resource_type": "ChildService",
+      "Service": {
+        "resource_type": "Service",
+        "id": "SVG_Epic_Interconnect",
+        "service_entries": [
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SVC_Epic_Interconnect_TCP",
+            "nested_service_path": "/infra/services/SVC_Epic_Interconnect_TCP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SVC_Epic_Interconnect_UDP",
+            "nested_service_path": "/infra/services/SVC_Epic_Interconnect_UDP"
+          }
+        ]
+      }
+    },
+    {
+      "resource_type": "ChildService",
+      "Service": {
+        "resource_type": "Service",
+        "id": "SVG_Epic_CareEverywhere",
+        "service_entries": [
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SVC_Epic_CareEverywhere_TCP",
+            "nested_service_path": "/infra/services/SVC_Epic_CareEverywhere_TCP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SVC_Epic_CareEverywhere_UDP",
+            "nested_service_path": "/infra/services/SVC_Epic_CareEverywhere_UDP"
+          }
+        ]
+      }
+    },
+    {
+      "resource_type": "ChildService",
+      "Service": {
+        "resource_type": "Service",
+        "id": "SVG_Epic_SystemPulse",
+        "service_entries": [
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SVC_Epic_SystemPulse_TCP",
+            "nested_service_path": "/infra/services/SVC_Epic_SystemPulse_TCP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SVC_Epic_SystemPulse_UDP",
+            "nested_service_path": "/infra/services/SVC_Epic_SystemPulse_UDP"
+          }
+        ]
+      }
+    },
+    {
+      "resource_type": "ChildService",
+      "Service": {
+        "resource_type": "Service",
+        "id": "SVG_Global_DNS",
+        "service_entries": [
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "Global_DNS_TCP",
+            "nested_service_path": "/infra/services/Global_DNS_TCP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "Global_DNS_UDP",
+            "nested_service_path": "/infra/services/Global_DNS_UDP"
+          }
+        ]
+      }
+    },
+    {
+      "resource_type": "ChildService",
+      "Service": {
+        "resource_type": "Service",
+        "id": "SVG_Global_WINS",
+        "service_entries": [
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "Global_WINS_TCP",
+            "nested_service_path": "/infra/services/Global_WINS_TCP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "Global_WINS_UDP",
+            "nested_service_path": "/infra/services/Global_WINS_UDP"
+          }
+        ]
+      }
+    },
+    {
+      "resource_type": "ChildService",
+      "Service": {
+        "resource_type": "Service",
+        "id": "SVG_Global_FileShare",
+        "service_entries": [
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "Global_FileShare_TCP",
+            "nested_service_path": "/infra/services/Global_FileShare_TCP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "Global_FileShare_UDP",
+            "nested_service_path": "/infra/services/Global_FileShare_UDP"
+          }
+        ]
+      }
+    },
+    {
+      "resource_type": "ChildService",
+      "Service": {
+        "resource_type": "Service",
+        "id": "SVG_Epic_Active_Directory",
+        "service_entries": [
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "WINS",
+            "nested_service_path": "/infra/services/WINS"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "DNS",
+            "nested_service_path": "/infra/services/DNS"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "Win_-_RPC__DCOM__EPM__DRSUAPI__NetLogonR__SamR__FRS_-_UDP",
+            "nested_service_path": "/infra/services/Win_-_RPC,_DCOM,_EPM,_DRSUAPI,_NetLogonR,_SamR,_FRS_-_UDP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "MS-DS-TCP",
+            "nested_service_path": "/infra/services/MS-DS-TCP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "DHCP,_MADCAP",
+            "nested_service_path": "/infra/services/DHCP,_MADCAP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "Windows-Global-Catalog-over-SSL",
+            "nested_service_path": "/infra/services/Windows-Global-Catalog-over-SSL"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "NBDG-Broadcast-V1",
+            "nested_service_path": "/infra/services/NBDG-Broadcast-V1"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "DNS-UDP",
+            "nested_service_path": "/infra/services/DNS-UDP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "KERBEROS-UDP",
+            "nested_service_path": "/infra/services/KERBEROS-UDP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "Win_2003_-_RPC__DCOM__EPM__DRSUAPI__NetLogonR__SamR__FRS",
+            "nested_service_path": "/infra/services/Win_2003_-_RPC,_DCOM,_EPM,_DRSUAPI,_NetLogonR,_SamR,_FRS"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "MS-DS-UDP",
+            "nested_service_path": "/infra/services/MS-DS-UDP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SMTP",
+            "nested_service_path": "/infra/services/SMTP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "WINS-UDP",
+            "nested_service_path": "/infra/services/WINS-UDP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "Win_2008_-_RPC__DCOM__EPM__DRSUAPI__NetLogonR__SamR__FRS",
+            "nested_service_path": "/infra/services/Win_2008_-_RPC,_DCOM,_EPM,_DRSUAPI,_NetLogonR,_SamR,_FRS"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "MS_RPC_TCP",
+            "nested_service_path": "/infra/services/MS_RPC_TCP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "KERBEROS",
+            "nested_service_path": "/infra/services/KERBEROS"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "LDAP",
+            "nested_service_path": "/infra/services/LDAP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "RPC__DFSR__SYSVOL_",
+            "nested_service_path": "/infra/services/RPC,_DFSR_(SYSVOL)"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "LDAP-UDP",
+            "nested_service_path": "/infra/services/LDAP-UDP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "DHCP-Server",
+            "nested_service_path": "/infra/services/DHCP-Server"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "LDAP-over-SSL",
+            "nested_service_path": "/infra/services/LDAP-over-SSL"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "NBNS-Broadcast-V1",
+            "nested_service_path": "/infra/services/NBNS-Broadcast-V1"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "NTP_Time_Server",
+            "nested_service_path": "/infra/services/NTP_Time_Server"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "Active_Directory_Server_UDP",
+            "nested_service_path": "/infra/services/Active_Directory_Server_UDP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "SOAP",
+            "nested_service_path": "/infra/services/SOAP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "Windows-Global-Catalog",
+            "nested_service_path": "/infra/services/Windows-Global-Catalog"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "Win_-_RPC__DCOM__EPM__DRSUAPI__NetLogonR__SamR__FRS_-_TCP",
+            "nested_service_path": "/infra/services/Win_-_RPC,_DCOM,_EPM,_DRSUAPI,_NetLogonR,_SamR,_FRS_-_TCP"
+          },
+          {
+            "resource_type": "NestedServiceServiceEntry",
+            "id": "Active_Directory_Server",
+            "nested_service_path": "/infra/services/Active_Directory_Server"
+          }
+        ]
+      }
+    }
+  ]
+}
